@@ -574,5 +574,5 @@ const services = [
 ];
 
 // প্রয়োজনে শেষে এই লাইনটি দিন যদি মডিউল হিসেবে ব্যবহার করতে চান
- module.exports = services;
+// module.exports = services;
       
