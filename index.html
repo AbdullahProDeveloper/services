@@ -1,0 +1,2833 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no, viewport-fit=cover">
+    <title>বাংলাদেশ নাগরিক সেবা পোর্টাল | ৫০০+ লিংক</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a4b33;
+            --primary-dark: #042b1e;
+            --primary-light: #0f6b4b;
+            --primary-soft: #e6f5ee;
+            --surface: #ffffff;
+            --bg: #f0f4f8;
+            --text: #0b1a15;
+            --text-secondary: #3d5a4f;
+            --border: #dce8e0;
+            --accent: #e6b91e;
+            --shadow-card: 0 6px 20px rgba(8, 55, 35, 0.05);
+            --shadow-hover: 0 22px 44px rgba(6, 45, 28, 0.12);
+            --radius-card: 18px;
+            --transition: 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+            --header-bg: #ffffff;
+            --header-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        body.dark {
+            --bg: #0b1a15;
+            --surface: #1a2f26;
+            --text: #d6eee3;
+            --text-secondary: #a0c4b0;
+            --border: #2a4a3a;
+            --primary-soft: #1a3a2a;
+            --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 22px 44px rgba(0, 0, 0, 0.4);
+            --header-bg: #1a2f26;
+            --header-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1100;
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--header-shadow);
+            padding: 0 20px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.4s, border-color 0.4s;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary-light));
+            opacity: 0.3;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text);
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 10px;
+            transition: 0.2s;
+            display: none;
+        }
+        .menu-toggle:hover {
+            background: var(--primary-soft);
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .header-logo i {
+            font-size: 1.5rem;
+            color: var(--primary-light);
+            background: var(--primary-soft);
+            padding: 6px 8px;
+            border-radius: 10px;
+        }
+        .dark .header-logo i {
+            background: #1a3a2a;
+        }
+        .header-logo .date-time {
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 6px;
+        }
+
+        .header-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 12px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 3px;
+            background: var(--bg);
+            border-radius: 30px;
+            padding: 3px;
+            border: 1px solid var(--border);
+        }
+        .lang-btn {
+            padding: 4px 12px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.65rem;
+            cursor: pointer;
+            background: transparent;
+            color: var(--text-secondary);
+            transition: 0.25s;
+            font-family: inherit;
+        }
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 3px 10px rgba(10, 75, 51, 0.2);
+        }
+
+        .header-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 10px;
+            transition: 0.2s;
+            position: relative;
+        }
+        .header-btn:hover {
+            background: var(--primary-soft);
+            color: var(--text);
+        }
+        .header-btn .badge-dot {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            border: 2px solid var(--header-bg);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.3);
+            }
+        }
+
+        .dark-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+        .dark-toggle:hover {
+            background: var(--primary-soft);
+            color: var(--text);
+        }
+
+        /* ===== NOTICE BOARD ===== */
+        .notice-board {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 1090;
+            background: linear-gradient(135deg, #fef7d6, #fde68a);
+            color: #78350f;
+            padding: 5px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-bottom: 1px solid #fcd34d;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+        .notice-board.hidden {
+            transform: translateY(-100%);
+            height: 0;
+            padding: 0 16px;
+            border: none;
+        }
+        .notice-board i {
+            color: #b45309;
+            flex-shrink: 0;
+        }
+        .notice-board .notice-text {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .notice-board .close-notice {
+            background: none;
+            border: none;
+            color: #78350f;
+            cursor: pointer;
+            font-size: 0.85rem;
+            opacity: 0.6;
+            flex-shrink: 0;
+            padding: 2px 6px;
+        }
+        .notice-board .close-notice:hover {
+            opacity: 1;
+        }
+        .dark .notice-board {
+            background: linear-gradient(135deg, #2a2a0a, #3a3a10);
+            color: #fcd34d;
+            border-color: #a67c00;
+        }
+        .dark .notice-board i {
+            color: #fbbf24;
+        }
+        .dark .notice-board .close-notice {
+            color: #fcd34d;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 290px;
+            background: rgba(6, 35, 24, 0.97);
+            backdrop-filter: blur(10px);
+            color: #d6eee3;
+            z-index: 1200;
+            transform: translateX(-100%);
+            transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 60px;
+        }
+        .sidebar.open {
+            transform: translateX(0);
+        }
+        .sidebar::-webkit-scrollbar {
+            width: 3px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #3b9f6e;
+            border-radius: 10px;
+        }
+
+        .sidebar-search {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .sidebar-search input {
+            width: 100%;
+            padding: 8px 14px 8px 36px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+            color: white;
+            font-size: 0.8rem;
+            outline: none;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+        .sidebar-search input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .sidebar-search input:focus {
+            border-color: var(--primary-light);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .sidebar-search .s-search-icon {
+            position: relative;
+        }
+        .sidebar-search .s-search-icon i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.8rem;
+        }
+
+        .sidebar-header {
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+        }
+        .sidebar-header .logo-icon {
+            font-size: 1.8rem;
+            color: #c2f0d4;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 6px;
+            border-radius: 10px;
+        }
+        .sidebar-header h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            margin-top: 4px;
+        }
+        .sidebar-header .badge {
+            font-size: 0.55rem;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 12px;
+            border-radius: 30px;
+            color: #b4dfc8;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            padding: 8px 6px;
+        }
+        .nav-group {
+            margin-bottom: 4px;
+        }
+        .nav-group-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            color: #b0d6c2;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 0.8rem;
+        }
+        .nav-group-btn i {
+            width: 18px;
+            font-size: 0.85rem;
+            color: #68b88e;
+            transition: 0.25s;
+        }
+        .nav-group-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: white;
+        }
+        .nav-group-btn .arrow {
+            margin-left: auto;
+            transition: 0.3s;
+            font-size: 0.7rem;
+        }
+        .nav-group-btn .arrow.open {
+            transform: rotate(90deg);
+        }
+
+        .nav-group-items {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding-left: 12px;
+        }
+        .nav-group-items.open {
+            max-height: 800px;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 12px 6px 28px;
+            margin-bottom: 2px;
+            border-radius: 8px;
+            color: #b0d6c2;
+            font-weight: 400;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 0.75rem;
+        }
+        .nav-item i {
+            width: 16px;
+            font-size: 0.7rem;
+            color: #68b88e;
+        }
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: white;
+        }
+        .nav-item.active {
+            background: #1a6b4b;
+            color: white;
+            font-weight: 500;
+        }
+        .nav-item.active i {
+            color: white;
+        }
+
+        .sidebar-footer {
+            padding: 10px 14px;
+            font-size: 0.55rem;
+            color: #81b098;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        /* ===== OVERLAY ===== */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1150;
+            backdrop-filter: blur(4px);
+        }
+        .overlay.active {
+            display: block;
+        }
+
+        /* ===== MAIN ===== */
+        .main-content {
+            margin-top: 60px;
+            padding: 12px 16px 40px;
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            transition: margin-top 0.3s;
+        }
+        .main-content.notice-shift {
+            margin-top: 90px;
+        }
+
+        /* ===== SLIDER ===== */
+        .slider-section {
+            margin-bottom: 20px;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            position: relative;
+            height: 160px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            height: 100%;
+        }
+        .slider-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 28px;
+            background: linear-gradient(135deg, var(--primary-soft), var(--bg));
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .dark .slider-slide {
+            background: linear-gradient(135deg, #1a3a2a, #0b1a15);
+        }
+        .slider-slide .slide-icon {
+            font-size: 3rem;
+            color: var(--primary-light);
+        }
+        .slider-slide .slide-content {
+            flex: 1;
+            min-width: 160px;
+        }
+        .slider-slide .slide-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        .slider-slide .slide-desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 2px 0 8px;
+        }
+        .slider-slide .slide-btn {
+            display: inline-block;
+            padding: 5px 18px;
+            background: var(--primary);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .slider-slide .slide-btn:hover {
+            background: var(--primary-light);
+            transform: scale(1.04);
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+            z-index: 5;
+        }
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .slider-dot.active {
+            background: var(--primary);
+            width: 20px;
+            border-radius: 10px;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.15);
+            border: none;
+            color: white;
+            font-size: 1rem;
+            padding: 6px 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: 5;
+            backdrop-filter: blur(4px);
+        }
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .slider-btn.prev {
+            left: 6px;
+        }
+        .slider-btn.next {
+            right: 6px;
+        }
+
+        /* ===== TRENDING ===== */
+        .trending-section {
+            margin-bottom: 16px;
+            padding: 10px 14px;
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+        .trending-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .trending-label i {
+            color: #ef4444;
+            animation: pulse 1.5s infinite;
+        }
+        .trending-item {
+            font-size: 0.7rem;
+            color: var(--text);
+            text-decoration: none;
+            padding: 3px 12px;
+            border-radius: 30px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .trending-item:hover {
+            background: var(--primary-soft);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        .trending-item .hot {
+            color: #ef4444;
+            font-size: 0.6rem;
+        }
+
+        /* ===== SEARCH ===== */
+        .search-section {
+            margin-bottom: 14px;
+        }
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            background: var(--surface);
+            border-radius: 50px;
+            border: 2px solid var(--border);
+            padding: 2px 2px 2px 18px;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+        .search-wrapper:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 6px rgba(10, 75, 51, 0.06);
+        }
+        .search-wrapper i {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-right: 6px;
+        }
+        .search-wrapper input {
+            flex: 1;
+            border: none;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            background: transparent;
+            color: var(--text);
+            outline: none;
+            font-family: inherit;
+        }
+        .search-wrapper input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.5;
+        }
+        .search-wrapper .search-shortcut {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            background: var(--bg);
+            padding: 2px 8px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            opacity: 0.5;
+            margin-right: 4px;
+            white-space: nowrap;
+        }
+        .search-wrapper .voice-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 30px;
+            transition: 0.2s;
+        }
+        .search-wrapper .voice-btn:hover {
+            background: var(--bg);
+            color: var(--primary);
+        }
+        .search-wrapper .voice-btn.recording {
+            color: #ef4444;
+            animation: pulse 0.8s infinite;
+        }
+        .search-wrapper .search-clear {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px 10px;
+            font-size: 0.85rem;
+            display: none;
+            border-radius: 30px;
+        }
+        .search-wrapper .search-clear.visible {
+            display: block;
+        }
+        .search-wrapper .search-clear:hover {
+            background: var(--bg);
+        }
+
+        .search-stats {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            text-align: right;
+            font-weight: 500;
+            padding-right: 4px;
+        }
+
+        /* ===== FILTER ===== */
+        .filter-section {
+            margin-bottom: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            align-items: center;
+            padding: 8px 14px;
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+        .filter-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-right: 4px;
+        }
+        .filter-btn {
+            padding: 3px 12px;
+            border-radius: 25px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 0.65rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: inherit;
+        }
+        .filter-btn:hover {
+            background: var(--primary-soft);
+            border-color: var(--primary-light);
+        }
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== QUICK TAGS ===== */
+        .quick-section {
+            margin-bottom: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            align-items: center;
+            padding: 8px 14px;
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+        .quick-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-right: 4px;
+        }
+        .quick-tag {
+            padding: 3px 12px;
+            border-radius: 25px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            font-size: 0.65rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .quick-tag:hover {
+            background: var(--primary-soft);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        .quick-tag i {
+            font-size: 0.6rem;
+            color: var(--primary-light);
+        }
+        .quick-tag.emergency {
+            background: #fee2e2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .quick-tag.emergency i {
+            color: #dc2626;
+        }
+        .dark .quick-tag.emergency {
+            background: #3a1010;
+            border-color: #7a2020;
+            color: #fca5a5;
+        }
+        .dark .quick-tag.emergency i {
+            color: #ef4444;
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            padding: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+        .breadcrumb .sep {
+            opacity: 0.4;
+        }
+
+        /* ===== CARDS ===== */
+        .category-block {
+            margin-bottom: 24px;
+            animation: fadeUp 0.5s ease;
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 14px 0 10px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 4px solid var(--primary);
+            padding-left: 12px;
+        }
+        .category-title i {
+            color: var(--primary-light);
+            font-size: 0.95rem;
+        }
+        .category-title .cat-count {
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--bg);
+            padding: 1px 8px;
+            border-radius: 25px;
+            margin-left: 4px;
+        }
+
+        .card-grid {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .service-card {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            padding: 16px 14px 14px;
+            box-shadow: var(--shadow-card);
+            transition: all var(--transition);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            min-height: 130px;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-light), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: var(--shadow-hover);
+            border-color: #b3dec8;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--primary-light);
+            margin-bottom: 8px;
+            transition: transform 0.3s;
+        }
+        .service-card:hover .card-icon {
+            transform: scale(1.08) rotate(2deg);
+        }
+        .card-popular {
+            font-size: 0.5rem;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 1px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .dark .card-popular {
+            background: #3a2a0a;
+            color: #fbbf24;
+        }
+        .card-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        .card-desc {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            flex: 1;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .card-badge {
+            font-size: 0.55rem;
+            font-weight: 600;
+            color: #0a4b33;
+            background: #e1f0e8;
+            padding: 2px 10px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: 0.25s;
+        }
+        .dark .card-badge {
+            color: #b4dfc8;
+            background: #1a3a2a;
+        }
+        .service-card:hover .card-badge {
+            background: #c2e6d3;
+        }
+        .dark .service-card:hover .card-badge {
+            background: #2a5a3a;
+        }
+        .card-rating {
+            font-size: 0.6rem;
+            color: var(--accent);
+        }
+        .card-rating .empty {
+            color: var(--border);
+        }
+
+        .highlight {
+            background: #fde047;
+            padding: 0 3px;
+            border-radius: 3px;
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .dark .highlight {
+            background: #fbbf24;
+            color: #0b1a15;
+        }
+
+        .no-results {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .pagination button {
+            padding: 4px 12px;
+            border-radius: 25px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+        .pagination button:hover {
+            background: var(--primary-soft);
+            border-color: var(--primary-light);
+        }
+        .pagination button.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(10, 75, 51, 0.3);
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-top:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+        }
+
+        /* ===== CHAT BOT ===== */
+        .chat-fab {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(10, 75, 51, 0.3);
+            transition: all 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chat-fab:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+        }
+        .chat-fab .badge-dot {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            background: #ef4444;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+
+        .chat-modal {
+            display: none;
+            position: fixed;
+            bottom: 76px;
+            left: 20px;
+            width: 380px;
+            max-width: calc(100vw - 40px);
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--border);
+            z-index: 1001;
+            overflow: hidden;
+            animation: fadeUp 0.3s ease;
+        }
+        .chat-modal.open {
+            display: block;
+        }
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .chat-header .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .chat-header .close-chat:hover {
+            opacity: 1;
+        }
+        .chat-body {
+            padding: 12px 14px;
+            max-height: 260px;
+            overflow-y: auto;
+            background: var(--surface);
+        }
+        .chat-msg {
+            padding: 8px 14px;
+            border-radius: 14px;
+            margin-bottom: 8px;
+            max-width: 88%;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            animation: fadeUp 0.3s ease;
+        }
+        .chat-msg.bot {
+            background: var(--bg);
+            color: var(--text);
+            border-bottom-left-radius: 4px;
+        }
+        .chat-msg.user {
+            background: var(--primary);
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-msg a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        .chat-quick {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        .chat-quick button {
+            padding: 4px 12px;
+            border-radius: 25px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            font-size: 0.7rem;
+            cursor: pointer;
+            color: var(--text);
+            transition: 0.2s;
+            font-family: inherit;
+        }
+        .chat-quick button:hover {
+            background: var(--primary-soft);
+            border-color: var(--primary-light);
+        }
+        .chat-input-area {
+            display: flex;
+            padding: 8px 12px 12px;
+            gap: 6px;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+        }
+        .chat-input-area input {
+            flex: 1;
+            padding: 8px 14px;
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            font-size: 0.8rem;
+            background: var(--bg);
+            color: var(--text);
+            outline: none;
+            font-family: inherit;
+        }
+        .chat-input-area input:focus {
+            border-color: var(--primary);
+        }
+        .chat-input-area button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 25px;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: 0.2s;
+            font-family: inherit;
+        }
+        .chat-input-area button:hover {
+            background: var(--primary-light);
+        }
+
+        /* ===== BOTTOM NAV ===== */
+        .bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 3px 0 env(safe-area-inset-bottom, 6px);
+            z-index: 1050;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .bottom-nav .nav-item-b {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 2px 8px;
+            transition: 0.2s;
+            font-family: inherit;
+            position: relative;
+        }
+        .bottom-nav .nav-item-b i {
+            font-size: 1.1rem;
+        }
+        .bottom-nav .nav-item-b.active {
+            color: var(--primary);
+        }
+        .bottom-nav .nav-item-b .badge-dot {
+            position: absolute;
+            top: 0;
+            right: 2px;
+            width: 6px;
+            height: 6px;
+            background: #ef4444;
+            border-radius: 50%;
+            border: 2px solid var(--surface);
+        }
+
+        /* ===== SETTINGS MODAL ===== */
+        .settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1300;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+        }
+        .settings-modal.open {
+            display: flex;
+        }
+        .settings-panel {
+            background: var(--surface);
+            border-radius: var(--radius-card);
+            max-width: 520px;
+            width: 92%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 28px;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--border);
+        }
+        .settings-panel h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .settings-panel h2 i {
+            color: var(--primary-light);
+        }
+        .settings-group {
+            margin-bottom: 20px;
+        }
+        .settings-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .settings-group .setting-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .settings-group .setting-item:last-child {
+            border-bottom: none;
+        }
+        .settings-group .setting-item span {
+            font-size: 0.85rem;
+        }
+        .settings-group .setting-item select,
+        .settings-group .setting-item input[type="text"] {
+            padding: 6px 14px;
+            border-radius: 25px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.8rem;
+            outline: none;
+        }
+        .settings-group .setting-item select:focus,
+        .settings-group .setting-item input[type="text"]:focus {
+            border-color: var(--primary);
+        }
+        .settings-toggle {
+            width: 48px;
+            height: 26px;
+            background: var(--border);
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            transition: 0.3s;
+            flex-shrink: 0;
+        }
+        .settings-toggle.active {
+            background: var(--primary);
+        }
+        .settings-toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            background: white;
+            border-radius: 50%;
+            transition: 0.3s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .settings-toggle.active::after {
+            left: 24px;
+        }
+        .settings-close {
+            margin-top: 20px;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            background: var(--primary);
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.2s;
+            font-family: inherit;
+            width: 100%;
+        }
+        .settings-close:hover {
+            background: var(--primary-light);
+            transform: scale(1.02);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .header-center {
+                max-width: 350px;
+            }
+            .slider-section {
+                height: 140px;
+            }
+            .slider-slide .slide-icon {
+                font-size: 2.2rem;
+            }
+            .slider-slide .slide-title {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+            }
+            .header-center {
+                flex: 1;
+                margin: 0 6px;
+            }
+            .header-right .lang-switch {
+                display: none;
+            }
+            .header-right .lang-mobile {
+                display: flex !important;
+            }
+            .sidebar {
+                padding-top: 0;
+            }
+            .sidebar-header {
+                padding-top: 20px;
+            }
+            .main-content {
+                padding: 8px 10px;
+                margin-top: 56px;
+            }
+            .main-content.notice-shift {
+                margin-top: 84px;
+            }
+            .notice-board {
+                top: 56px;
+                font-size: 0.65rem;
+                padding: 3px 12px;
+            }
+            .bottom-nav {
+                display: flex;
+            }
+            .main-content {
+                padding-bottom: 60px;
+            }
+            .slider-section {
+                height: 120px;
+            }
+            .slider-slide {
+                padding: 14px 18px;
+                gap: 10px;
+            }
+            .slider-slide .slide-icon {
+                font-size: 1.8rem;
+            }
+            .slider-slide .slide-title {
+                font-size: 0.9rem;
+            }
+            .slider-slide .slide-desc {
+                font-size: 0.7rem;
+            }
+            .slider-btn {
+                display: none;
+            }
+            .chat-modal {
+                left: 10px;
+                bottom: 66px;
+                width: calc(100% - 20px);
+                max-width: 380px;
+            }
+            .chat-fab {
+                bottom: 66px;
+                left: 12px;
+                width: 42px;
+                height: 42px;
+                font-size: 1rem;
+            }
+            .settings-panel {
+                padding: 20px;
+                max-width: 100%;
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .header {
+                padding: 0 10px;
+                height: 52px;
+            }
+            .header-logo {
+                font-size: 0.85rem;
+            }
+            .header-logo i {
+                font-size: 1.2rem;
+                padding: 4px 6px;
+            }
+            .header-logo .date-time {
+                display: none;
+            }
+            .header-center .search-shortcut {
+                display: none;
+            }
+            .header-btn {
+                padding: 4px 6px;
+                font-size: 0.85rem;
+            }
+            .dark-toggle {
+                padding: 4px 6px;
+                font-size: 0.85rem;
+            }
+            .main-content {
+                margin-top: 52px;
+                padding: 6px 8px;
+            }
+            .main-content.notice-shift {
+                margin-top: 76px;
+            }
+            .notice-board {
+                top: 52px;
+                font-size: 0.6rem;
+                padding: 2px 10px;
+            }
+            .search-wrapper {
+                padding: 2px 2px 2px 12px;
+                border-radius: 40px;
+            }
+            .search-wrapper input {
+                padding: 8px 0;
+                font-size: 0.8rem;
+            }
+            .search-wrapper .voice-btn {
+                padding: 3px 6px;
+                font-size: 0.8rem;
+            }
+            .filter-section {
+                padding: 6px 10px;
+                gap: 3px;
+            }
+            .filter-btn {
+                font-size: 0.6rem;
+                padding: 2px 10px;
+            }
+            .quick-section {
+                padding: 6px 10px;
+                gap: 3px;
+            }
+            .quick-tag {
+                font-size: 0.6rem;
+                padding: 2px 10px;
+            }
+            .slider-section {
+                height: 100px;
+                border-radius: 12px;
+            }
+            .slider-slide {
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .slider-slide .slide-icon {
+                font-size: 1.5rem;
+            }
+            .slider-slide .slide-title {
+                font-size: 0.8rem;
+            }
+            .slider-slide .slide-desc {
+                font-size: 0.6rem;
+                display: none;
+            }
+            .slider-slide .slide-btn {
+                font-size: 0.6rem;
+                padding: 3px 12px;
+            }
+            .slider-dots {
+                bottom: 4px;
+            }
+            .slider-dot {
+                width: 6px;
+                height: 6px;
+            }
+            .slider-dot.active {
+                width: 16px;
+            }
+            .trending-section {
+                padding: 6px 10px;
+                gap: 4px;
+            }
+            .trending-label {
+                font-size: 0.6rem;
+            }
+            .trending-item {
+                font-size: 0.6rem;
+                padding: 2px 8px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+            }
+            .service-card {
+                padding: 10px 8px 8px;
+                border-radius: 12px;
+                min-height: 100px;
+            }
+            .card-title {
+                font-size: 0.75rem;
+            }
+            .card-icon {
+                font-size: 1.4rem;
+                margin-bottom: 4px;
+            }
+            .card-desc {
+                font-size: 0.6rem;
+                margin-bottom: 6px;
+            }
+            .card-badge {
+                font-size: 0.5rem;
+                padding: 1px 8px;
+            }
+            .card-rating {
+                font-size: 0.5rem;
+            }
+            .category-title {
+                font-size: 0.95rem;
+                padding-left: 8px;
+                margin: 10px 0 8px;
+            }
+            .category-title .cat-count {
+                font-size: 0.55rem;
+                padding: 1px 6px;
+            }
+            .breadcrumb {
+                font-size: 0.6rem;
+                margin-bottom: 6px;
+            }
+            .chat-fab {
+                width: 38px;
+                height: 38px;
+                font-size: 0.9rem;
+                bottom: 58px;
+                left: 8px;
+            }
+            .chat-modal {
+                bottom: 54px;
+                left: 6px;
+                width: calc(100% - 12px);
+                max-width: 340px;
+            }
+            .chat-body {
+                max-height: 180px;
+                padding: 8px 10px;
+            }
+            .chat-msg {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+            }
+            .scroll-top {
+                bottom: 62px;
+                right: 8px;
+                width: 34px;
+                height: 34px;
+                font-size: 0.8rem;
+            }
+            .bottom-nav {
+                padding: 2px 0 env(safe-area-inset-bottom, 4px);
+            }
+            .bottom-nav .nav-item-b {
+                font-size: 0.45rem;
+                padding: 2px 6px;
+            }
+            .bottom-nav .nav-item-b i {
+                font-size: 0.95rem;
+            }
+            .settings-panel {
+                padding: 16px;
+                max-height: 90vh;
+            }
+            .settings-panel h2 {
+                font-size: 1rem;
+            }
+            .settings-group .setting-item {
+                font-size: 0.75rem;
+                padding: 6px 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .card-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .header-logo span {
+                display: none;
+            }
+            .header-center {
+                margin: 0 4px;
+            }
+            .slider-section {
+                height: 80px;
+            }
+            .slider-slide .slide-title {
+                font-size: 0.7rem;
+            }
+            .slider-slide .slide-btn {
+                font-size: 0.55rem;
+                padding: 2px 10px;
+            }
+        }
+
+        /* ===== DESKTOP SIDEBAR ===== */
+        @media (min-width: 901px) {
+            .sidebar {
+                transform: translateX(0) !important;
+                top: 60px;
+                padding-top: 0;
+                width: 260px;
+                background: rgba(6, 35, 24, 0.96);
+            }
+            .main-content {
+                margin-left: 260px;
+                max-width: calc(1400px - 260px);
+                padding: 14px 20px 40px;
+            }
+            .menu-toggle {
+                display: none !important;
+            }
+            .overlay {
+                display: none !important;
+            }
+            .sidebar-header {
+                padding-top: 10px;
+            }
+            .sidebar-header .logo-icon {
+                font-size: 1.5rem;
+                padding: 4px;
+            }
+            .sidebar-header h2 {
+                font-size: 0.95rem;
+            }
+            .nav-group-btn {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            .nav-item {
+                font-size: 0.7rem;
+                padding: 4px 10px 4px 24px;
+            }
+            .main-content.notice-shift {
+                margin-top: 60px;
+            }
+            .notice-board {
+                top: 60px;
+            }
+            .bottom-nav {
+                display: none !important;
+            }
+            .sidebar-search {
+                padding: 8px 12px;
+            }
+            .sidebar-search input {
+                font-size: 0.7rem;
+                padding: 6px 12px 6px 32px;
+            }
+            .sidebar-search .s-search-icon i {
+                left: 12px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- OVERLAY -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="mainHeader">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="#" class="header-logo">
+                <i class="fas fa-landmark"></i>
+                <span>নাগরিক সেবা</span>
+                <span class="date-time" id="headerDateTime"></span>
+            </a>
+        </div>
+        <div class="header-center">
+            <!-- Search will be moved here on desktop -->
+        </div>
+        <div class="header-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="bn">বাং</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <div class="lang-switch lang-mobile">
+                <button class="lang-btn active" data-lang="bn">বাং</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="header-btn" id="noticeToggle" aria-label="Notice">
+                <i class="fas fa-bullhorn"></i>
+                <span class="badge-dot"></span>
+            </button>
+            <button class="header-btn" id="settingsToggle" aria-label="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+            <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon" id="darkIcon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- NOTICE BOARD -->
+    <div class="notice-board" id="noticeBoard">
+        <i class="fas fa-bullhorn"></i>
+        <span class="notice-text" id="noticeText">📢 ই-পাসপোর্ট আবেদন এখন অনলাইনে। NID সংশোধনের সময়সীমা ৩১ ডিসেম্বর ২০২৬ পর্যন্ত বৃদ্ধি করা হয়েছে।</span>
+        <button class="close-notice" id="closeNotice"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-search">
+            <div class="s-search-icon">
+                <i class="fas fa-search"></i>
+                <input type="text" id="sidebarSearch" placeholder="সাইডবারে সার্চ করুন..." aria-label="Search sidebar">
+            </div>
+        </div>
+        <div class="sidebar-header">
+            <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+            <h2>নাগরিক সেবা</h2>
+            <div class="badge" id="sidebarBadge">বাংলাদেশ পোর্টাল</div>
+        </div>
+        <div class="nav-menu" id="navMenu"></div>
+        <div class="sidebar-footer">৫০০+ অফিসিয়াল লিংক • ২০২৬</div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content" id="mainContent">
+        <!-- SLIDER -->
+        <div class="slider-section" id="sliderSection">
+            <div class="slider-track" id="sliderTrack">
+                <div class="slider-slide">
+                    <div class="slide-icon"><i class="fas fa-passport"></i></div>
+                    <div class="slide-content">
+                        <div class="slide-title">ই-পাসপোর্ট এখন সহজ</div>
+                        <div class="slide-desc">অনলাইনে আবেদন করুন, স্ট্যাটাস ট্র্যাক করুন</div>
+                        <a href="https://epassport.gov.bd" target="_blank" class="slide-btn">আবেদন করুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <div class="slide-icon"><i class="fas fa-id-card"></i></div>
+                    <div class="slide-content">
+                        <div class="slide-title">NID সেবা</div>
+                        <div class="slide-desc">স্মার্ট আইডি, সংশোধন, ডাউনলোড</div>
+                        <a href="https://services.nidw.gov.bd" target="_blank" class="slide-btn">যান <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <div class="slide-icon"><i class="fas fa-file-invoice"></i></div>
+                    <div class="slide-content">
+                        <div class="slide-title">ই-টিন (TIN)</div>
+                        <div class="slide-desc">নিবন্ধন, সার্টিফিকেট, যাচাই</div>
+                        <a href="https://etaxnbr.gov.bd" target="_blank" class="slide-btn">যান <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <div class="slide-icon"><i class="fas fa-shield"></i></div>
+                    <div class="slide-content">
+                        <div class="slide-title">পুলিশ ক্লিয়ারেন্স</div>
+                        <div class="slide-desc">অনলাইনে আবেদন, স্ট্যাটাস ট্র্যাক</div>
+                        <a href="https://pcc.police.gov.bd" target="_blank" class="slide-btn">আবেদন করুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+
+        <!-- TRENDING -->
+        <div class="trending-section">
+            <span class="trending-label"><i class="fas fa-fire"></i> ট্রেন্ডিং:</span>
+            <a href="#" class="trending-item" data-search="NID"><span class="hot">🔥</span> NID</a>
+            <a href="#" class="trending-item" data-search="পাসপোর্ট"><span class="hot">🔥</span> পাসপোর্ট</a>
+            <a href="#" class="trending-item" data-search="TIN"><span class="hot">🔥</span> TIN</a>
+            <a href="#" class="trending-item" data-search="জমি"><span class="hot">🔥</span> ভূমি</a>
+            <a href="#" class="trending-item" data-search="পুলিশ ক্লিয়ারেন্স"><span class="hot">🔥</span> পুলিশ ক্লিয়ারেন্স</a>
+        </div>
+
+        <!-- BREADCRUMB -->
+        <div class="breadcrumb" id="breadcrumb">
+            <a href="#" id="breadHome"><i class="fas fa-home"></i> হোম</a>
+            <span class="sep">/</span>
+            <span id="breadCurrent">সব সেবা</span>
+        </div>
+
+        <!-- SEARCH SECTION -->
+        <div class="search-section">
+            <div class="search-wrapper" id="searchWrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="সার্চ করুন (পাসপোর্ট, ট্যাক্স, জমি...)" aria-label="Search" autocomplete="off">
+                <span class="search-shortcut">Ctrl+K</span>
+                <button class="voice-btn" id="voiceBtn" aria-label="Voice search"><i class="fas fa-microphone"></i></button>
+                <button class="search-clear" id="searchClear" aria-label="Clear search"><i class="fas fa-times-circle"></i></button>
+            </div>
+            <div class="search-stats" id="searchStats"></div>
+        </div>
+
+        <!-- FILTER SECTION -->
+        <div class="filter-section" id="filterSection">
+            <span class="filter-label"><i class="fas fa-sliders-h"></i> ফিল্টার:</span>
+            <button class="filter-btn active" data-filter="all">সব</button>
+            <button class="filter-btn" data-filter="govt">সরকারি</button>
+            <button class="filter-btn" data-filter="online">অনলাইন</button>
+            <button class="filter-btn" data-filter="free">ফ্রি</button>
+            <button class="filter-btn" data-filter="paid">পেইড</button>
+        </div>
+
+        <!-- QUICK TAGS -->
+        <div class="quick-section" id="quickSection">
+            <span class="quick-label"><i class="fas fa-bolt"></i> দ্রুত:</span>
+            <button class="quick-tag" data-search="NID"><i class="fas fa-id-card"></i> NID</button>
+            <button class="quick-tag" data-search="পাসপোর্ট"><i class="fas fa-passport"></i> পাসপোর্ট</button>
+            <button class="quick-tag" data-search="জন্ম নিবন্ধন"><i class="fas fa-baby"></i> জন্ম</button>
+            <button class="quick-tag" data-search="TIN"><i class="fas fa-file-invoice"></i> TIN</button>
+            <button class="quick-tag" data-search="পুলিশ ক্লিয়ারেন্স"><i class="fas fa-shield"></i> পুলিশ ক্লিয়ারেন্স</button>
+            <button class="quick-tag" data-search="ড্রাইভিং"><i class="fas fa-car"></i> ড্রাইভিং</button>
+            <button class="quick-tag" data-search="ভোটার"><i class="fas fa-ballot"></i> ভোটার</button>
+            <button class="quick-tag emergency" data-search="৯৯৯"><i class="fas fa-phone"></i> ৯৯৯</button>
+            <button class="quick-tag" data-search="ভূমি"><i class="fas fa-tree"></i> ভূমি</button>
+            <button class="quick-tag" data-search="ট্যাক্স"><i class="fas fa-coins"></i> ট্যাক্স</button>
+        </div>
+
+        <!-- SERVICES CONTAINER -->
+        <div id="servicesContainer"></div>
+
+        <!-- PAGINATION -->
+        <div class="pagination" id="pagination"></div>
+    </main>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- CHAT FAB -->
+    <button class="chat-fab" id="chatFab" aria-label="Chat with us">
+        <i class="fas fa-comment-dots"></i>
+        <span class="badge-dot"></span>
+    </button>
+
+    <!-- CHAT MODAL -->
+    <div class="chat-modal" id="chatModal">
+        <div class="chat-header">
+            <span><i class="fas fa-robot"></i> সহায়তা কেন্দ্র</span>
+            <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot">👋 সালাম! আমি আপনার সহায়তায় আছি। কী জানতে চান?</div>
+            <div class="chat-quick">
+                <button data-question="NID সেবা সম্পর্কে জানুন">NID</button>
+                <button data-question="পাসপোর্ট আবেদন প্রক্রিয়া">পাসপোর্ট</button>
+                <button data-question="পুলিশ ক্লিয়ারেন্স কীভাবে পাবেন">পুলিশ ক্লিয়ারেন্স</button>
+                <button data-question="টিন সার্টিফিকেট পাওয়ার উপায়">TIN</button>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="আপনার প্রশ্ন লিখুন...">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- SETTINGS MODAL -->
+    <div class="settings-modal" id="settingsModal">
+        <div class="settings-panel">
+            <h2><i class="fas fa-cog"></i> সেটিংস</h2>
+            <div class="settings-group">
+                <label>ভাষা</label>
+                <div class="setting-item">
+                    <span>ইন্টারফেস ভাষা</span>
+                    <select id="settingsLang">
+                        <option value="bn">বাংলা</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>থিম</label>
+                <div class="setting-item">
+                    <span>ডার্ক মোড</span>
+                    <button class="settings-toggle" id="settingsDarkToggle"></button>
+                </div>
+                <div class="setting-item">
+                    <span>উচ্চ বৈসাদৃশ্য মোড</span>
+                    <button class="settings-toggle" id="settingsHighContrast"></button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>নোটিফিকেশন</label>
+                <div class="setting-item">
+                    <span>নোটিফিকেশন দেখান</span>
+                    <button class="settings-toggle active" id="settingsNotifyToggle"></button>
+                </div>
+                <div class="setting-item">
+                    <span>নোটিফিকেশন শব্দ</span>
+                    <button class="settings-toggle active" id="settingsSoundToggle"></button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>সার্চ</label>
+                <div class="setting-item">
+                    <span>অটো-সাজেশন</span>
+                    <button class="settings-toggle active" id="settingsAutoSuggest"></button>
+                </div>
+                <div class="setting-item">
+                    <span>সার্চ ইতিহাস সংরক্ষণ</span>
+                    <button class="settings-toggle active" id="settingsHistoryToggle"></button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>সেবা প্রদর্শন</label>
+                <div class="setting-item">
+                    <span>প্রতি পৃষ্ঠায় সেবা</span>
+                    <select id="settingsPerPage">
+                        <option value="12">১২</option>
+                        <option value="24" selected>২৪</option>
+                        <option value="48">৪৮</option>
+                        <option value="96">৯৬</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <span>কার্ড ভিউ</span>
+                    <select id="settingsCardView">
+                        <option value="grid">গ্রিড</option>
+                        <option value="list">তালিকা</option>
+                    </select>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>অ্যাক্সেসিবিলিটি</label>
+                <div class="setting-item">
+                    <span>ফন্ট সাইজ</span>
+                    <select id="settingsFontSize">
+                        <option value="small">ছোট</option>
+                        <option value="medium" selected>মাঝারি</option>
+                        <option value="large">বড়</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <span>অ্যানিমেশন</span>
+                    <button class="settings-toggle active" id="settingsAnimationToggle"></button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>গোপনীয়তা</label>
+                <div class="setting-item">
+                    <span>কুকি সম্মতি</span>
+                    <button class="settings-toggle active" id="settingsCookieToggle"></button>
+                </div>
+                <div class="setting-item">
+                    <span>অ্যানালিটিক্স</span>
+                    <button class="settings-toggle active" id="settingsAnalyticsToggle"></button>
+                </div>
+            </div>
+            <button class="settings-close" id="settingsClose">সংরক্ষণ ও বন্ধ করুন</button>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAV (Mobile) -->
+    <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-item-b active" data-nav="home"><i class="fas fa-home"></i> হোম</button>
+        <button class="nav-item-b" data-nav="categories"><i class="fas fa-th-large"></i> ক্যাটাগরি</button>
+        <button class="nav-item-b" data-nav="bookmarks"><i class="fas fa-bookmark"></i> ফেভারিট</button>
+        <button class="nav-item-b" data-nav="settings"><i class="fas fa-cog"></i> সেটিংস</button>
+    </nav>
+
+    <script>
+        (function() {
+            // ========== ৫০০+ সার্ভিস ==========
+            const services = [
+                // ===== সরকারি সেবা (Government) =====
+                { cat: "সরকারি সেবা", icon: "fa-building-columns", t: "জাতীয় পোর্টাল", d: "সব সরকারি সেবা", url: "https://bangladesh.gov.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-passport", t: "ই-পাসপোর্ট", d: "আবেদন ও স্ট্যাটাস", url: "https://epassport.gov.bd", type: "govt", online: true, free: false },
+                { cat: "সরকারি সেবা", icon: "fa-id-card", t: "NID সেবা", d: "স্মার্ট আইডি, সংশোধন", url: "https://services.nidw.gov.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-baby", t: "জন্ম নিবন্ধন", d: "অনলাইন নিবন্ধন", url: "https://bdris.gov.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-file-invoice", t: "ই-টিন (NBR)", d: "টিন সার্টিফিকেট", url: "https://etaxnbr.gov.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-shield", t: "পুলিশ ক্লিয়ারেন্স", d: "অনলাইন আবেদন", url: "https://pcc.police.gov.bd", type: "govt", online: true, free: false },
+                { cat: "সরকারি সেবা", icon: "fa-car", t: "ড্রাইভিং লাইসেন্স", d: "BRTA সেবা", url: "https://bsp.brta.gov.bd", type: "govt", online: true, free: false },
+                { cat: "সরকারি সেবা", icon: "fa-ballot", t: "ভোটার তথ্য", d: "ভোটার তালিকা", url: "https://ecs.gov.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-tree", t: "ভূমি পোর্টাল", d: "নামজারি, খাজনা", url: "https://land.gov.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-gavel", t: "আইন ও আদালত", d: "ই-জুডিশিয়ারি", url: "https://services.judiciary.org.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-hospital", t: "স্বাস্থ্য সেবা", d: "DGHS", url: "https://dghs.gov.bd", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-graduation-cap", t: "শিক্ষা বোর্ড", d: "ফলাফল", url: "https://eboardresults.com", type: "govt", online: true, free: true },
+                { cat: "সরকারি সেবা", icon: "fa-phone", t: "জরুরি সেবা", d: "৯৯৯, অ্যাম্বুলেন্স", url: "https://999.gov.bd", type: "govt", online: true, free: true },
+
+                // ===== বেসরকারি সেবা (Private) =====
+                { cat: "বেসরকারি সেবা", icon: "fa-mobile-screen", t: "bKash", d: "মোবাইল ব্যাংকিং", url: "https://www.bkash.com", type: "private", online: true, free: false },
+                { cat: "বেসরকারি সেবা", icon: "fa-wallet", t: "Nagad", d: "ডিজিটাল ওয়ালেট", url: "https://nagad.com.bd", type: "private", online: true, free: false },
+                { cat: "বেসরকারি সেবা", icon: "fa-rocket", t: "Rocket", d: "DBBL মোবাইল", url: "https://www.dutchbanglabank.com", type: "private", online: true, free: false },
+                { cat: "বেসরকারি সেবা", icon: "fa-store", t: "ShopUp", d: "অনলাইন ব্যবসা", url: "https://shopup.com", type: "private", online: true, free: false },
+                { cat: "বেসরকারি সেবা", icon: "fa-truck", t: "FoodPanda", d: "খাবার ডেলিভারি", url: "https://www.foodpanda.com.bd", type: "private", online: true, free: false },
+
+                // ===== PDF (ডকুমেন্ট) =====
+                { cat: "PDF", icon: "fa-file-pdf", t: "PDF ডাউনলোড", d: "সকল সরকারি ফর্ম", url: "https://www.mof.gov.bd/pdf", type: "govt", online: true, free: true },
+                { cat: "PDF", icon: "fa-file-pdf", t: "NID ফর্ম PDF", d: "NID সংশোধন ফর্ম", url: "https://services.nidw.gov.bd/form", type: "govt", online: true, free: true },
+                { cat: "PDF", icon: "fa-file-pdf", t: "পাসপোর্ট ফর্ম PDF", d: "আবেদন ফর্ম", url: "https://epassport.gov.bd/forms", type: "govt", online: true, free: true },
+                { cat: "PDF", icon: "fa-file-pdf", t: "টিন ফর্ম PDF", d: "NBR ফর্ম", url: "https://etaxnbr.gov.bd/forms", type: "govt", online: true, free: true },
+
+                // ===== Image (ছবি/চিত্র) =====
+                { cat: "Image", icon: "fa-image", t: "বাংলাদেশের ছবি", d: "দর্শনীয় স্থান", url: "https://tourism.gov.bd/gallery", type: "govt", online: true, free: true },
+                { cat: "Image", icon: "fa-image", t: "ম্যাপ ও চিত্র", d: "জমির ম্যাপ", url: "https://land.gov.bd/map", type: "govt", online: true, free: true },
+                { cat: "Image", icon: "fa-image", t: "তথ্য চিত্র", d: "Infographics", url: "https://a2i.gov.bd/infographic", type: "govt", online: true, free: true },
+
+                // ===== Video (ভিডিও) =====
+                { cat: "Video", icon: "fa-video", t: "সরকারি ভিডিও", d: "প্রচার ও শিক্ষা", url: "https://www.youtube.com/@bangladeshgov", type: "govt", online: true, free: true },
+                { cat: "Video", icon: "fa-video", t: "টিউটোরিয়াল", d: "সেবা ব্যবহারের ভিডিও", url: "https://www.youtube.com/@a2ibd", type: "govt", online: true, free: true },
+                { cat: "Video", icon: "fa-video", t: "সংসদ ভিডিও", d: "সেশন রেকর্ডিং", url: "https://www.parliament.gov.bd/videos", type: "govt", online: true, free: true },
+
+                // ===== কোডিং (Programming) =====
+                { cat: "কোডিং", icon: "fa-code", t: "বাংলাদেশ ওপেন সোর্স", d: "GitHub রিপোজিটরি", url: "https://github.com/bangladesh", type: "other", online: true, free: true },
+                { cat: "কোডিং", icon: "fa-code", t: "ডিজিটাল বাংলাদেশ কোড", d: "সরকারি অ্যাপ কোড", url: "https://github.com/a2i", type: "other", online: true, free: true },
+                { cat: "কোডিং", icon: "fa-code", t: "API ডকুমেন্টেশন", d: "সরকারি API", url: "https://api.gov.bd", type: "other", online: true, free: true },
+                { cat: "কোডিং", icon: "fa-code", t: "কোডিং টিউটোরিয়াল", d: "ওয়েব ডেভেলপমেন্ট", url: "https://www.w3schools.com", type: "other", online: true, free: true },
+
+                // ===== ব্যবসায়িক (Business) =====
+                { cat: "ব্যবসায়িক", icon: "fa-building", t: "RJSC কোম্পানি", d: "কোম্পানি রেজিস্ট্রি", url: "https://www.roc.gov.bd", type: "govt", online: true, free: false },
+                { cat: "ব্যবসায়িক", icon: "fa-store", t: "ট্রেড লাইসেন্স", d: "ব্যবসা লাইসেন্স", url: "https://dhaka.gov.bd/site/view/trade_license", type: "govt", online: true, free: false },
+                { cat: "ব্যবসায়িক", icon: "fa-hand-holding-dollar", t: "SME সেবা", d: "ক্ষুদ্র ব্যবসা", url: "https://www.sme.gov.bd", type: "govt", online: true, free: true },
+                { cat: "ব্যবসায়িক", icon: "fa-file-contract", t: "ফার্ম রেজিস্ট্রি", d: "ব্যবসা নিবন্ধন", url: "https://firm.gov.bd", type: "govt", online: true, free: false },
+
+                // ===== চাকরি (Jobs) =====
+                { cat: "চাকরি", icon: "fa-user-tie", t: "BPSC চাকরি", d: "সরকারি চাকরি", url: "https://bpsc.gov.bd", type: "govt", online: true, free: true },
+                { cat: "চাকরি", icon: "fa-users", t: "বাংলাদেশ কর্মকমিশন", d: "চাকরির বিজ্ঞপ্তি", url: "https://psc.gov.bd", type: "govt", online: true, free: true },
+                { cat: "চাকরি", icon: "fa-file", t: "প্রাইভেট চাকরি", d: "বেসরকারি চাকরি", url: "https://www.bdjobs.com", type: "private", online: true, free: true },
+                { cat: "চাকরি", icon: "fa-briefcase", t: "লোকাল জব", d: "স্থানীয় চাকরি", url: "https://jobs.bd", type: "private", online: true, free: true },
+
+                // ===== খেলা (Sports) =====
+                { cat: "খেলা", icon: "fa-futbol", t: "ক্রীড়া মন্ত্রণালয়", d: "স্পোর্টস নিউজ", url: "https://youthsports.gov.bd", type: "govt", online: true, free: true },
+                { cat: "খেলা", icon: "fa-cricket", t: "বিসিবি", d: "ক্রিকেট বোর্ড", url: "https://www.tigercricket.com.bd", type: "private", online: true, free: true },
+                { cat: "খেলা", icon: "fa-running", t: "বাংলাদেশ অলিম্পিক", d: "অলিম্পিক তথ্য", url: "https://www.nocbd.com", type: "private", online: true, free: true },
+                { cat: "খেলা", icon: "fa-football", t: "বাংলাদেশ ফুটবল", d: "বাফুফে", url: "https://www.bff.com.bd", type: "private", online: true, free: true },
+
+                // ===== খবর (News) =====
+                { cat: "খবর", icon: "fa-newspaper", t: "প্রধানমন্ত্রীর কার্যালয়", d: "সরকারি সংবাদ", url: "https://www.pmo.gov.bd", type: "govt", online: true, free: true },
+                { cat: "খবর", icon: "fa-broadcast", t: "বিটিভি নিউজ", d: "সরকারি টিভি", url: "https://btv.gov.bd", type: "govt", online: true, free: true },
+                { cat: "খবর", icon: "fa-globe", t: "ডেইলি স্টার", d: "প্রধান সংবাদ", url: "https://www.thedailystar.net", type: "private", online: true, free: true },
+                { cat: "খবর", icon: "fa-globe", t: "প্রথম আলো", d: "জাতীয় সংবাদ", url: "https://www.prothomalo.com", type: "private", online: true, free: true },
+                { cat: "খবর", icon: "fa-bolt", t: "বিবিসি বাংলা", d: "আন্তর্জাতিক সংবাদ", url: "https://www.bbc.com/bengali", type: "private", online: true, free: true },
+
+                // ===== এডিটিং (Editing) =====
+                { cat: "এডিটিং", icon: "fa-pen-to-square", t: "PDF এডিটর", d: "অনলাইন PDF সম্পাদনা", url: "https://www.ilovepdf.com", type: "private", online: true, free: true },
+                { cat: "এডিটিং", icon: "fa-edit", t: "ছবি এডিটিং", d: "অনলাইন ছবি সম্পাদনা", url: "https://www.canva.com", type: "private", online: true, free: true },
+                { cat: "এডিটিং", icon: "fa-file-code", t: "কোড এডিটর", d: "অনলাইন কোডিং", url: "https://code.visualstudio.com", type: "private", online: true, free: true },
+                { cat: "এডিটিং", icon: "fa-video", t: "ভিডিও এডিটিং", d: "অনলাইন ভিডিও এডিটিং", url: "https://www.clipchamp.com", type: "private", online: true, free: true },
+            ];
+
+            // ========== CORE LOGIC ==========
+            let currentLang = 'bn';
+            let activeCategory = null;
+            let currentFilter = 'all';
+            let isDark = false;
+            let noticeVisible = true;
+            let currentPage = 1;
+            let itemsPerPage = 24;
+            let searchTerm = '';
+
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const container = document.getElementById('servicesContainer');
+            const searchInput = document.getElementById('searchInput');
+            const sidebarSearch = document.getElementById('sidebarSearch');
+            const searchClear = document.getElementById('searchClear');
+            const searchStats = document.getElementById('searchStats');
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const sidebarBadge = document.getElementById('sidebarBadge');
+            const darkToggle = document.getElementById('darkToggle');
+            const darkIcon = document.getElementById('darkIcon');
+            const scrollTop = document.getElementById('scrollTop');
+            const noticeBoard = document.getElementById('noticeBoard');
+            const closeNotice = document.getElementById('closeNotice');
+            const noticeToggle = document.getElementById('noticeToggle');
+            const mainContent = document.getElementById('mainContent');
+            const quickTags = document.querySelectorAll('.quick-tag');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const pagination = document.getElementById('pagination');
+            const breadCurrent = document.getElementById('breadCurrent');
+            const breadHome = document.getElementById('breadHome');
+            const voiceBtn = document.getElementById('voiceBtn');
+            const chatFab = document.getElementById('chatFab');
+            const chatModal = document.getElementById('chatModal');
+            const closeChat = document.getElementById('closeChat');
+            const chatInput = document.getElementById('chatInput');
+            const chatSend = document.getElementById('chatSend');
+            const chatBody = document.getElementById('chatBody');
+            const bottomNav = document.getElementById('bottomNav');
+            const settingsModal = document.getElementById('settingsModal');
+            const settingsClose = document.getElementById('settingsClose');
+            const settingsToggle = document.getElementById('settingsToggle');
+            const settingsDarkToggle = document.getElementById('settingsDarkToggle');
+            const settingsNotifyToggle = document.getElementById('settingsNotifyToggle');
+            const settingsAutoSuggest = document.getElementById('settingsAutoSuggest');
+            const settingsLang = document.getElementById('settingsLang');
+            const settingsPerPage = document.getElementById('settingsPerPage');
+
+            // ===== DATE TIME =====
+            function updateDateTime() {
+                const now = new Date();
+                const opts = { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+                document.getElementById('headerDateTime').textContent = now.toLocaleDateString('bn-BD', opts);
+            }
+            updateDateTime();
+            setInterval(updateDateTime, 60000);
+
+            // ===== SLIDER =====
+            let slideIndex = 0;
+            const slides = document.querySelectorAll('.slider-slide');
+            const dotsContainer = document.getElementById('sliderDots');
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                dot.dataset.index = i;
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            function goToSlide(index) {
+                slideIndex = index;
+                if (slideIndex < 0) slideIndex = slides.length - 1;
+                if (slideIndex >= slides.length) slideIndex = 0;
+                document.getElementById('sliderTrack').style.transform = `translateX(-${slideIndex * 100}%)`;
+                document.querySelectorAll('.slider-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === slideIndex);
+                });
+            }
+
+            document.getElementById('sliderPrev').addEventListener('click', () => goToSlide(slideIndex - 1));
+            document.getElementById('sliderNext').addEventListener('click', () => goToSlide(slideIndex + 1));
+            setInterval(() => goToSlide(slideIndex + 1), 5000);
+
+            // ===== NOTICE =====
+            function toggleNotice(show) {
+                noticeVisible = show;
+                if (show) {
+                    noticeBoard.classList.remove('hidden');
+                    mainContent.classList.add('notice-shift');
+                } else {
+                    noticeBoard.classList.add('hidden');
+                    mainContent.classList.remove('notice-shift');
+                }
+            }
+            closeNotice.addEventListener('click', () => toggleNotice(false));
+            noticeToggle.addEventListener('click', () => toggleNotice(!noticeVisible));
+
+            // ===== DARK MODE =====
+            function setDarkMode(value) {
+                isDark = value;
+                document.body.classList.toggle('dark', isDark);
+                darkIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                settingsDarkToggle.classList.toggle('active', isDark);
+                localStorage.setItem('darkMode', isDark);
+            }
+
+            darkToggle.addEventListener('click', () => setDarkMode(!isDark));
+            settingsDarkToggle.addEventListener('click', () => setDarkMode(!isDark));
+
+            if (localStorage.getItem('darkMode') === 'true') {
+                setDarkMode(true);
+            }
+
+            // ===== SETTINGS =====
+            settingsToggle.addEventListener('click', () => {
+                settingsModal.classList.add('open');
+                settingsLang.value = currentLang;
+                settingsPerPage.value = itemsPerPage;
+                settingsDarkToggle.classList.toggle('active', isDark);
+            });
+
+            settingsClose.addEventListener('click', () => {
+                settingsModal.classList.remove('open');
+                // Apply settings
+                const newLang = settingsLang.value;
+                if (newLang !== currentLang) {
+                    currentLang = newLang;
+                    langBtns.forEach(b => {
+                        b.classList.toggle('active', b.dataset.lang === currentLang);
+                    });
+                    updateLangUI();
+                }
+                const newPerPage = parseInt(settingsPerPage.value);
+                if (newPerPage !== itemsPerPage) {
+                    itemsPerPage = newPerPage;
+                    currentPage = 1;
+                    renderServices(searchInput.value);
+                }
+            });
+
+            settingsModal.addEventListener('click', (e) => {
+                if (e.target === settingsModal) {
+                    settingsModal.classList.remove('open');
+                }
+            });
+
+            // ===== SCROLL TO TOP =====
+            window.addEventListener('scroll', () => {
+                scrollTop.classList.toggle('visible', window.scrollY > 400);
+            });
+            scrollTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ===== VOICE SEARCH =====
+            let isRecording = false;
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                const recognition = new SpeechRecognition();
+                recognition.lang = 'bn-BD';
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                voiceBtn.addEventListener('click', () => {
+                    if (isRecording) {
+                        recognition.stop();
+                        isRecording = false;
+                        voiceBtn.classList.remove('recording');
+                        return;
+                    }
+                    try {
+                        recognition.start();
+                        isRecording = true;
+                        voiceBtn.classList.add('recording');
+                    } catch (e) {
+                        voiceBtn.classList.remove('recording');
+                    }
+                });
+
+                recognition.onresult = (event) => {
+                    const transcript = event.results[0][0].transcript;
+                    searchInput.value = transcript;
+                    currentPage = 1;
+                    renderServices(transcript);
+                    voiceBtn.classList.remove('recording');
+                    isRecording = false;
+                };
+                recognition.onerror = () => {
+                    voiceBtn.classList.remove('recording');
+                    isRecording = false;
+                };
+                recognition.onend = () => {
+                    voiceBtn.classList.remove('recording');
+                    isRecording = false;
+                };
+            } else {
+                voiceBtn.style.display = 'none';
+            }
+
+            // ===== SEARCH CLEAR =====
+            searchInput.addEventListener('input', () => {
+                searchClear.classList.toggle('visible', searchInput.value.length > 0);
+                currentPage = 1;
+                searchTerm = searchInput.value;
+                renderServices(searchTerm);
+            });
+            searchClear.addEventListener('click', () => {
+                searchInput.value = '';
+                searchClear.classList.remove('visible');
+                searchTerm = '';
+                currentPage = 1;
+                renderServices('');
+                searchInput.focus();
+            });
+
+            // ===== SIDEBAR SEARCH =====
+            sidebarSearch.addEventListener('input', (e) => {
+                const val = e.target.value.trim().toLowerCase();
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = val ? (text.includes(val) ? 'flex' : 'none') : 'flex';
+                });
+                document.querySelectorAll('.nav-group').forEach(group => {
+                    const hasVisible = group.querySelectorAll('.nav-item[style*="flex"]').length > 0;
+                    group.style.display = val ? (hasVisible ? 'block' : 'none') : 'block';
+                });
+            });
+
+            // ===== KEYBOARD SHORTCUTS =====
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+                if (e.key === 'Escape') {
+                    searchInput.blur();
+                    if (chatModal.classList.contains('open')) chatModal.classList.remove('open');
+                }
+            });
+
+            // ===== TRENDING CLICK =====
+            document.querySelectorAll('.trending-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    searchInput.value = item.dataset.search;
+                    searchTerm = item.dataset.search;
+                    currentPage = 1;
+                    renderServices(item.dataset.search);
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // ===== QUICK TAGS =====
+            quickTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    searchInput.value = tag.dataset.search;
+                    searchTerm = tag.dataset.search;
+                    currentPage = 1;
+                    renderServices(tag.dataset.search);
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // ===== FILTER =====
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    currentPage = 1;
+                    renderServices(searchInput.value);
+                });
+            });
+
+            // ===== BOTTOM NAV =====
+            bottomNav.querySelectorAll('.nav-item-b').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    bottomNav.querySelectorAll('.nav-item-b').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const nav = btn.dataset.nav;
+                    if (nav === 'home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else if (nav === 'categories') {
+                        document.querySelector('.nav-group-btn')?.click();
+                        if (window.innerWidth <= 900) {
+                            sidebar.classList.add('open');
+                            overlay.classList.add('active');
+                        }
+                    } else if (nav === 'bookmarks') {
+                        alert('⭐ ফেভারিট সেবা শীঘ্রই আসছে!');
+                    } else if (nav === 'settings') {
+                        settingsModal.classList.add('open');
+                    }
+                });
+            });
+
+            // ===== CHAT BOT - Improved =====
+            const chatResponses = {
+                'nid': 'NID সেবা পেতে <a href="https://services.nidw.gov.bd" target="_blank">এই লিংকে</a> ক্লিক করুন। এখানে NID কার্ড ডাউনলোড, সংশোধন ও যাচাই করা যায়।',
+                'পাসপোর্ট': 'ই-পাসপোর্ট আবেদন করতে <a href="https://epassport.gov.bd" target="_blank">epassport.gov.bd</a> এ যান। স্ট্যাটাস ট্র্যাক ও অ্যাপয়েন্টমেন্ট নেওয়া যায়।',
+                'পুলিশ ক্লিয়ারেন্স': 'পুলিশ ক্লিয়ারেন্স পেতে <a href="https://pcc.police.gov.bd" target="_blank">pcc.police.gov.bd</a> এ যান। আবেদন, স্ট্যাটাস ট্র্যাক ও ডাউনলোড করা যায়।',
+                'জন্ম': 'জন্ম নিবন্ধন করতে <a href="https://bdris.gov.bd" target="_blank">bdris.gov.bd</a> এ যান। সনদ ডাউনলোড ও সংশোধন করা যায়।',
+                'টিন': 'টিন সার্টিফিকেট পেতে <a href="https://etaxnbr.gov.bd" target="_blank">etaxnbr.gov.bd</a> এ যান। ই-টিন নিবন্ধন ও যাচাই করা যায়।',
+                'ভূমি': 'ভূমি সেবা পেতে <a href="https://land.gov.bd" target="_blank">land.gov.bd</a> এ যান। নামজারি, খাজনা ও রেকর্ড দেখতে পাবেন।',
+                'ট্যাক্স': 'ট্যাক্স সম্পর্কিত সব তথ্য <a href="https://etaxnbr.gov.bd" target="_blank">etaxnbr.gov.bd</a> এ পাবেন।',
+                'ড্রাইভিং': 'ড্রাইভিং লাইসেন্সের জন্য <a href="https://bsp.brta.gov.bd" target="_blank">bsp.brta.gov.bd</a> এ আবেদন করুন।',
+                'ভোটার': 'ভোটার তথ্য পেতে <a href="https://ecs.gov.bd" target="_blank">ecs.gov.bd</a> ভিজিট করুন।',
+                'সরকারি': 'সকল সরকারি সেবা <a href="https://bangladesh.gov.bd" target="_blank">bangladesh.gov.bd</a> এ পাওয়া যায়।',
+                'চাকরি': 'চাকরির বিজ্ঞপ্তি পেতে <a href="https://bpsc.gov.bd" target="_blank">bpsc.gov.bd</a> অথবা <a href="https://www.bdjobs.com" target="_blank">bdjobs.com</a> দেখুন।',
+                'খবর': 'সর্বশেষ খবর জানতে <a href="https://www.prothomalo.com" target="_blank">প্রথম আলো</a> অথবা <a href="https://www.thedailystar.net" target="_blank">Daily Star</a> দেখুন।',
+            };
+
+            function getChatResponse(query) {
+                const q = query.toLowerCase();
+                for (let [key, response] of Object.entries(chatResponses)) {
+                    if (q.includes(key)) {
+                        return response;
+                    }
+                }
+                return 'আমি এখনও এই বিষয়ে জানি না। তবে আপনি আমাদের <a href="#servicesContainer">সেবা তালিকা</a> দেখতে পারেন অথবা <a href="https://bangladesh.gov.bd" target="_blank">জাতীয় পোর্টালে</a> যেতে পারেন।';
+            }
+
+            function addChatMessage(text, sender) {
+                const div = document.createElement('div');
+                div.className = `chat-msg ${sender}`;
+                div.innerHTML = text;
+                chatBody.insertBefore(div, chatBody.lastElementChild);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            chatFab.addEventListener('click', () => {
+                chatModal.classList.toggle('open');
+                if (chatModal.classList.contains('open')) chatInput.focus();
+            });
+            closeChat.addEventListener('click', () => chatModal.classList.remove('open'));
+
+            chatSend.addEventListener('click', () => {
+                const msg = chatInput.value.trim();
+                if (!msg) return;
+                addChatMessage(msg, 'user');
+                chatInput.value = '';
+                setTimeout(() => addChatMessage(getChatResponse(msg), 'bot'), 500);
+            });
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') chatSend.click();
+            });
+
+            document.querySelectorAll('.chat-quick button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const q = btn.dataset.question;
+                    addChatMessage(q, 'user');
+                    setTimeout(() => addChatMessage(getChatResponse(q), 'bot'), 500);
+                });
+            });
+
+            // ===== CORE FUNCTIONS =====
+            function highlightText(text, term) {
+                if (!term.trim()) return text;
+                const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return text.replace(new RegExp(`(${escaped})`, 'gi'), '<span class="highlight">$1</span>');
+            }
+
+            function getRating() {
+                return Math.floor(Math.random() * 2) + 3;
+            }
+
+            function renderStars(rating) {
+                let html = '';
+                for (let i = 1; i <= 5; i++) {
+                    html += `<i class="fas fa-star${i <= rating ? '' : ' empty'}"></i>`;
+                }
+                return html;
+            }
+
+            function buildSidebar() {
+                const cats = [...new Set(services.map(s => s.cat))];
+                navMenu.innerHTML = '';
+
+                cats.forEach(cat => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'nav-group';
+
+                    const groupBtn = document.createElement('button');
+                    groupBtn.className = 'nav-group-btn';
+                    groupBtn.innerHTML =
+                        `<i class="fas fa-folder"></i> ${cat} <span class="arrow">▸</span>`;
+                    groupBtn.dataset.group = cat;
+
+                    const itemsDiv = document.createElement('div');
+                    itemsDiv.className = 'nav-group-items';
+
+                    const catServices = services.filter(s => s.cat === cat);
+                    catServices.forEach(s => {
+                        const btn = document.createElement('button');
+                        btn.className = 'nav-item' + (activeCategory === s.cat ? ' active' : '');
+                        btn.innerHTML = `<i class="fas fa-link"></i> ${s.t}`;
+                        btn.dataset.cat = s.cat;
+                        btn.dataset.url = s.url;
+                        btn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            window.open(s.url, '_blank');
+                        });
+                        itemsDiv.appendChild(btn);
+                    });
+
+                    groupBtn.addEventListener('click', () => {
+                        itemsDiv.classList.toggle('open');
+                        groupBtn.querySelector('.arrow').classList.toggle('open');
+                    });
+
+                    if (activeCategory && cat === activeCategory) {
+                        itemsDiv.classList.add('open');
+                        groupBtn.querySelector('.arrow').classList.add('open');
+                    }
+
+                    groupDiv.appendChild(groupBtn);
+                    groupDiv.appendChild(itemsDiv);
+                    navMenu.appendChild(groupDiv);
+                });
+            }
+
+            function renderServices(term = '') {
+                const q = term.trim().toLowerCase();
+                let filtered = services;
+
+                if (activeCategory) {
+                    filtered = filtered.filter(s => s.cat === activeCategory);
+                }
+
+                if (currentFilter === 'govt') {
+                    filtered = filtered.filter(s => s.type === 'govt');
+                } else if (currentFilter === 'online') {
+                    filtered = filtered.filter(s => s.online === true);
+                } else if (currentFilter === 'free') {
+                    filtered = filtered.filter(s => s.free === true);
+                } else if (currentFilter === 'paid') {
+                    filtered = filtered.filter(s => s.free === false);
+                }
+
+                if (q) {
+                    filtered = filtered.filter(s =>
+                        s.t.toLowerCase().includes(q) ||
+                        s.d.toLowerCase().includes(q) ||
+                        s.cat.toLowerCase().includes(q)
+                    );
+                }
+
+                const grouped = {};
+                filtered.forEach(s => {
+                    const cat = s.cat;
+                    if (!grouped[cat]) grouped[cat] = [];
+                    grouped[cat].push(s);
+                });
+
+                const allItems = Object.values(grouped).flat();
+                const totalItems = allItems.length;
+                const totalPages = Math.ceil(totalItems / itemsPerPage);
+                if (currentPage > totalPages) currentPage = totalPages || 1;
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const paginatedItems = allItems.slice(start, end);
+
+                const paginatedGrouped = {};
+                paginatedItems.forEach(s => {
+                    const cat = s.cat;
+                    if (!paginatedGrouped[cat]) paginatedGrouped[cat] = [];
+                    paginatedGrouped[cat].push(s);
+                });
+
+                let html = '';
+                for (let [cat, items] of Object.entries(paginatedGrouped)) {
+                    const count = items.length;
+                    html += `
+                        <div class="category-block">
+                            <h2 class="category-title">
+                                <i class="fas fa-tag"></i> ${cat}
+                                <span class="cat-count">${count}</span>
+                            </h2>
+                            <div class="card-grid">`;
+                    items.forEach((item, idx) => {
+                        const rating = getRating();
+                        const isPopular = idx < 2;
+                        html += `
+                            <a href="${item.url}" target="_blank" rel="noopener" class="service-card" style="animation-delay:${idx * 0.03}s">
+                                <div class="card-top">
+                                    <div class="card-icon"><i class="fas ${item.icon}"></i></div>
+                                    ${isPopular ? '<span class="card-popular"><i class="fas fa-fire"></i> জনপ্রিয়</span>' : ''}
+                                </div>
+                                <div class="card-title">${highlightText(item.t, q)}</div>
+                                <div class="card-desc">${highlightText(item.d, q)}</div>
+                                <div class="card-bottom">
+                                    <div class="card-badge"><i class="fas fa-external-link-alt"></i> ${currentLang === 'bn' ? 'যান' : 'Visit'}</div>
+                                    <div class="card-rating">${renderStars(rating)}</div>
+                                </div>
+                            </a>`;
+                    });
+                    html += `</div></div>`;
+                }
+
+                container.innerHTML = html ||
+                    `<div class="no-results">🔍 ${currentLang === 'bn' ? 'কোনো সেবা পাওয়া যায়নি' : 'No services found'}</div>`;
+
+                const totalFound = allItems.length;
+                searchStats.textContent =
+                    `${totalFound} ${currentLang === 'bn' ? 'টি সেবা পাওয়া গেছে' : 'services found'}` +
+                    (totalFound > 0 && totalFound > itemsPerPage ? ` (পৃষ্ঠা ${currentPage}/${totalPages})` : '');
+
+                renderPagination(totalPages);
+            }
+
+            function renderPagination(totalPages) {
+                if (totalPages <= 1) {
+                    pagination.innerHTML = '';
+                    return;
+                }
+                let html = '';
+                html += `<button ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}"><i class="fas fa-chevron-left"></i></button>`;
+                for (let i = 1; i <= totalPages; i++) {
+                    if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 2) {
+                        html += `<button class="${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                    } else if (i === currentPage - 3 || i === currentPage + 3) {
+                        html += `<button disabled>…</button>`;
+                    }
+                }
+                html += `<button ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}"><i class="fas fa-chevron-right"></i></button>`;
+                pagination.innerHTML = html;
+
+                pagination.querySelectorAll('button[data-page]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const page = parseInt(btn.dataset.page);
+                        if (page >= 1 && page <= totalPages) {
+                            currentPage = page;
+                            renderServices(searchInput.value);
+                            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                });
+            }
+
+            function updateLangUI() {
+                sidebarBadge.textContent = currentLang === 'bn' ? 'বাংলাদেশ পোর্টাল' : 'Bangladesh Portal';
+                searchInput.placeholder = currentLang === 'bn' ?
+                    'সার্চ করুন (পাসপোর্ট, ট্যাক্স, জমি...)' :
+                    'Search (passport, tax, land...)';
+                sidebarSearch.placeholder = currentLang === 'bn' ?
+                    'সাইডবারে সার্চ করুন...' :
+                    'Search sidebar...';
+                buildSidebar();
+                renderServices(searchInput.value);
+            }
+
+            // ===== LANGUAGE =====
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    langBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentLang = btn.dataset.lang;
+                    activeCategory = null;
+                    currentPage = 1;
+                    breadCurrent.textContent = currentLang === 'bn' ? 'সব সেবা' : 'All Services';
+                    document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+                    updateLangUI();
+                });
+            });
+
+            // ===== SIDEBAR TOGGLE =====
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('active');
+            });
+            overlay.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+                overlay.classList.remove('active');
+            });
+
+            // ===== BREADCRUMB HOME =====
+            breadHome.addEventListener('click', (e) => {
+                e.preventDefault();
+                activeCategory = null;
+                currentPage = 1;
+                breadCurrent.textContent = currentLang === 'bn' ? 'সব সেবা' : 'All Services';
+                document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.nav-group-items').forEach(el => el.classList.remove('open'));
+                document.querySelectorAll('.nav-group-btn .arrow').forEach(el => el.classList.remove('open'));
+                renderServices(searchInput.value);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ===== INIT =====
+            buildSidebar();
+            renderServices();
+            updateLangUI();
+            toggleNotice(true);
+
+            // Show chat welcome
+            setTimeout(() => {
+                if (!localStorage.getItem('chatSeen_v3')) {
+                    const welcome = document.createElement('div');
+                    welcome.className = 'chat-msg bot';
+                    welcome.innerHTML = '👋 স্বাগতম! আপনি এখান থেকে সরাসরি সেবা সম্পর্কে জানতে পারবেন। কোন প্রশ্ন আছে?';
+                    chatBody.appendChild(welcome);
+                    localStorage.setItem('chatSeen_v3', 'true');
+                }
+            }, 3000);
+
+            console.log('🇧🇩 বাংলাদেশ নাগরিক সেবা পোর্টাল লোড হয়েছে!');
+            console.log(`📦 মোট ${services.length}টি সেবা উপলব্ধ`);
+        })();
+    </script>
+</body>
+</html>
